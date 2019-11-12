@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+	<% if(currentUser && currentUser.isAdmin){ %>
+	<% } %> 
+<div class="container">
+		<header class='jumbotron'>
+			<div class='container text-center'>
+				<h1>Keen Kamps</h1>
+				<p>welcomes you to the best camp sites</p>
+				<p><a class='btn btn-info btn-md' href='/campgrounds/new'>Add new Kampground</a></p>
+			</div>
+		</header>
+		<!--style="display:flex; flex-wrap: wrap; are properties to help grid with diff size pics-->
+		<div class ='row' style="display:flex; flex-wrap: wrap;"> 
+				<% campgrounds.forEach((campground) => { %>
+				<div class ='col-md-3 col-sm-6'>
+					<div class="thumbnail text-center">
+						<img src="<%= campground.image %>"</h2>
+						<div class ='caption'>
+							<h4><%= campground.name %></h4>
+						</div>
+						<p>
+							<a href="/campgrounds/<%= campground._id %>" class="btn btn-info">More Info</a>
+						</p>
+					</div>
+				</div>
+		    <% }); %>
+		</div>
+	</div>
+<p class="text-center">
+	<a href='/campgrounds'>Back</a>
+</p>
+<% include ../partials/footer %>

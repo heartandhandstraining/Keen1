@@ -1,0 +1,16 @@
+.thumbnail {
+	padding: 0;
+}
+.thumbnail img {
+	width: 100%;
+}
+
+.form-inline {
+	display: inline;
+}
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
+}
