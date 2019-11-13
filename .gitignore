@@ -1,5 +1,4 @@
-.git
-git/
 /data
 .env
 /node_modules
+
