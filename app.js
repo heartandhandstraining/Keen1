@@ -30,7 +30,7 @@ var commentRoutes    = require("./routes/comments"),
 	// });
 
     // console.log(process.env.DATABASEURL);
-    console.log(process.env.GMAILPW);
+    // console.log(process.env.GMAILPW);
 // mongo db atlas for development data base
 mongoose.connect("mongodb://127.0.0.1:27017/keen_kamps", { 
     useUnifiedTopology: true,
