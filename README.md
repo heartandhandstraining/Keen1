@@ -109,4 +109,4 @@ Some comments in the source code are course notes and therefore might not seem n
 
 ## License
 
-#### [MIT](./LICENSE)
+#### [MIT](https://opensource.org/licenses/ISC)

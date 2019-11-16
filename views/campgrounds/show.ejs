@@ -36,15 +36,16 @@
 				<li class = "list-group-item">Item 2</li>
 				<li class = "list-group-item">Item 3</li>
 			</div>
-			<!-- <div id="map"></div> -->
+			<div id="map"></div>
 		</div>
 		<div class = "col-md-9">
 			<div class = "thumbnail">
 				<img class="img-responsive" src="<%= campground.image %>">
-				<div class="caption">
+				<div class="caption text-left">
 					<h4 class="pull-right">$<%= campground.dollar_cost %>/night</h4>
-					<h4><a><%= campground.name %></a></h4>
-					<p><%= campground.description %></p>
+					<p>
+						<h4><a><%= campground.name %></a></h4>
+						<%= campground.description %>
 					<p>
   						<em>Submitted by: <a href="/users/<%= campground.author.id %>"><%=campground.author.username %></a>, <%= 													moment(campground.createdAt).fromNow() %>
 						</em>
@@ -65,7 +66,7 @@
 				<hr/>
 				<% campground.comments.forEach((comment) => { %>
 				<div class = "row">
-					<div class = "col-md-12">
+					<div class = "col-md-12 text-left">
 						<strong><%= comment.author.username %></strong>
 						<span class="pull-right"><%= moment(comment.createdAt).format('llll') %>
 						</span>
@@ -88,7 +89,4 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGJW28zXMMoCk2VUP0apdddGtfodTK1AQ&callback=initMap">
 	</script>
-	<p class="text-center">
-		<a href='/campgrounds'>Back</a>
-	</p>
 <% include ../partials/footer %>

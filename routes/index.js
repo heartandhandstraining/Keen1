@@ -98,6 +98,7 @@ router.post('/forgot', function(req, res, next) {
         });
       });
     },
+
     function(token, user, done) {
       var smtpTransport = nodemailer.createTransport({
         service: 'Gmail', 
@@ -108,7 +109,7 @@ router.post('/forgot', function(req, res, next) {
       });
       var mailOptions = {
         to: user.email,
-        from: 'vikingsheepart.com',
+        from: 'vikingsheepart@gmail.com',
         subject: 'Node.js Password Reset',
         text: user.username + ':\n\n' +
           'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
@@ -130,6 +131,7 @@ router.post('/forgot', function(req, res, next) {
 
 router.get('/reset/:token', function(req, res) {
   User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
+    if (err) return next(err);
     if (!user) {
       req.flash('error', 'Password reset token is invalid or has expired.');
       return res.redirect('/forgot');
