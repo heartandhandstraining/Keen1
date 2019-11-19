@@ -12,18 +12,6 @@ var options = {
 	formatter: null
 };
 var geocoder = NodeGeocoder(options);
-// // INDEX route - show all campgrounds
-// router.get("/", (req, res) => {
-// 	// console.log(req.user);
-//     // all campgrounds from db
-//     Campground.find({}, (err, allCampgrounds) => {
-//         if (err){
-//             console.log(err);
-//         } else {
-//             res.render("campgrounds/index", {campgrounds: allCampgrounds, currentUser: req.user});
-//         }
-//     });
-// });
 
 //INDEX - show all campgrounds
 router.get("/", (req, res) => {
