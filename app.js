@@ -18,38 +18,21 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index");
 
-// var url = process.env.DATABASEURL || "mongodb://127.0.0.1:27017/keen_kamps"
-// mongoose.connect(url){ 
-    // useUnifiedTopology: true,
-	// useNewUrlParser: true, 
-	// useFindAndModify: false, 
-	// useCreateIndex: true 
-	// }).then(() => {console.log('Connected to DB via local development database!');
-	// }).catch (err => {
-	// 	console.log('ERROR:', err.message);
-	// });
+var url = process.env.DATABASEURL || "mongodb://127.0.0.1:27017/keen_kamps";
 
-    // console.log(process.env.DATABASEURL);
-    // console.log(process.env.GMAILPW);
-// mongo db atlas for development data base
-mongoose.connect("mongodb://127.0.0.1:27017/keen_kamps", { 
+mongoose.connect(url, { 
     useUnifiedTopology: true,
 	useNewUrlParser: true, 
 	useFindAndModify: false, 
 	useCreateIndex: true 
-	}).then(() => {console.log('Connected to DB via local development database!');
+	}).then(() => {console.log('Connected to DB');
 	}).catch (err => {
-		console.log('ERROR:', err.message);
+	    console.log('ERROR:', err.message);
 	});
+
 // mongo db atlas for deployment data base
-// mongoose.connect("mongodb+srv://Serenity:Hyonni00!@cluster0-z6en9.mongodb.net/test?retryWrites=true&w=majority", {
-// 	useNewUrlParser: true,
-// 	useFindAndModify: false,
-// 	useCreateIndex: true 
-// 	}).then(() => {console.log('Connected to DB via deployment database!');
-// }).catch (err => {
-// 	console.log('ERROR:', err.message);
-// });
+// mongoose.connect("mongodb+srv://dawn:<password>@cluster0-jsc8q.mongodb.net/test?retryWrites=true&w=majority". {
+// mongoose.connect("mongodb+srv://Serenity:<password>@cluster0-z6en9.mongodb.net/test?retryWrites=true&w=majority", {
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -84,10 +67,10 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-// for development goorm database
-app.listen(3000, () => {
+// for development or goorm database
+// app.listen(3000, () => {
+// 	console.log('KeenKamps development environment!');
 // for heroku deployment db
-	console.log('KeenKamps via development database!');
-// app.listen(process.env.PORT || 5000, () => {
-    // console.log('KeenKamps via deployment database!');
+app.listen(process.env.PORT || 3000, () => {
+    console.log('KeenKamps environment connected');
 });
