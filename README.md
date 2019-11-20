@@ -1,6 +1,6 @@
 # KeenKamps
 
-> A Node.js web application project spawned from the Udemy course - [The Web Developer Bootcamp by Colt Steele](https://www.udemy.com/the-web-developer-bootcamp/)
+> A Node.js web application project spawned from the Udemy course - [The Web Developer Bootcamp by Colt Steele](https://www.udemy.com/the-web-developer-bootcamp/). As such, it beckons for expansion. Feel free to make improvements!
 
 ## Live Demo
 
@@ -29,12 +29,10 @@ To see the app in action, go to []()
   * Upload campground photos
 
   * Display campground location on Google Maps
-  
-  * Search existing campgrounds
 
 * Manage user account with basic functionalities:
 
-  * ~~Password reset via email confirmation~~ (disabled)
+  * ~~Password reset via email confirmation~~ (uses less secure google apps, so this is disabled for security)
 
   * Profile page setup with sign-up
 
@@ -44,13 +42,7 @@ To see the app in action, go to []()
 
 ### Custom Enhancements
 
-* Update campground photos when editing campgrounds
-
-* Update personal information on profile page
-
-* Improve image load time on the landing page using Cloudinary
-
-* Use Helmet to strengthen security
+* Update/edit campgrounds
  
 ## Getting Started
 
@@ -105,8 +97,11 @@ Some comments in the source code are course notes and therefore might not seem n
 ### Platforms
 
 * [Heroku](https://www.heroku.com/)
-* recommended: [HELMET](helmetjs.github.io)
 
 ## License
 
 #### [MIT](https://opensource.org/licenses/ISC)
+
+## NOTE: 
+
+* recommended: [HELMET](helmetjs.github.io)
